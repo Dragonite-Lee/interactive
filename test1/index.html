@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+    
+</head>
+<body>
+    <input type="number" class="first">
+    <input type="number" class="second">
+    <h1 class="answer"></h1>
+    <button class="btn">정답</button>
+</body>
+<script>
+    const firstValue = document.querySelector(".first");
+    const secondValue = document.querySelector(".second");
+    const answer = document.querySelector(".answer");
+    const btn = document.querySelector(".btn");
+
+    firstValue.value = Math.round(Math.random() * 100);
+    secondValue.value = Math.round(Math.random() * 100);
+
+    // window.addEventListener("load", () => add());
+    const add = () => {
+        let addValue;
+        addValue = Number(firstValue.value) + Number(secondValue.value);
+        answer.innerHTML = addValue;
+    }
+    add();
+</script>
+</html>

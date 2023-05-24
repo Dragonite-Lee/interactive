@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: #13adcc;
+        }
+        h1 {
+            font-size: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>test</h1>
+</body>
+<script> 
+    // window.onload = () => {}이렇게 쓰고 안에 코드 넣으면 script태그 위에 있어도 동작함. 윈도우가 로드되면 실행해달란 코드임
+    // 그리고 script태그 src할 때 defer사용하면, onload와 같은 역할을 함
+    const h1 = document.querySelector("h1");
+    
+    window.addEventListener("mousemove", (event) => {
+        // console.log(event.pageX, event.pageY) //왼쪽이 0이고 오른쪽으로가면 숫자가 커짐 pageY는 위에가 0이고 아래로 가면 커짐
+        h1.innerText = `x: ${event.pageX}, y: ${event.pageY}`;
+    })
+</script>
+</html>
