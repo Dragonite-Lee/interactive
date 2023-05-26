@@ -9,24 +9,78 @@
     <style>
         body {
             background-color: #13adcc;
+            height: 300vh;
         }
         h1 {
             font-size: 30px;
             padding: 20px;
         }
+        .box {
+            width: 60px;
+            height: 60px;
+            /* background-color: black; */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 2s ease-in-out;
+        }
+        .box img {
+            width: 200px;
+
+        }
     </style>
 </head>
 <body>
     <h1>test</h1>
+    <div class="box">
+        <img src="/test1/butterfly.gif" alt="나비">
+    </div>
 </body>
 <script> 
     // window.onload = () => {}이렇게 쓰고 안에 코드 넣으면 script태그 위에 있어도 동작함. 윈도우가 로드되면 실행해달란 코드임
     // 그리고 script태그 src할 때 defer사용하면, onload와 같은 역할을 함
     const h1 = document.querySelector("h1");
+    const box = document.querySelector(".box")
+
+    // window.addEventListener("mousemove", (event) => {
+    //     // console.log(event.pageX, event.pageY) //왼쪽이 0이고 오른쪽으로가면 숫자가 커짐 pageY는 위에가 0이고 아래로 가면 커짐
+        
+    //     // console.log(event.pageY, event.clientY, event.screenY,)
+    //     //clientY는 브라우저 사이즈 내에서 어디를 클릭하냐 즉, 스크롤해서 내려도 그 위치
+    //     //pageY는 실제 페이지 값을 가져옴
+    //     //그리고 screenY는 내 모니터 전체 화면이 기준이다.
+    //     h1.innerText = `x: ${event.pageX}, y: ${event.pageY}`;
+    //     box.style.top = event.pageY + "px";
+    //     box.style.left = event.pageX + "px";
+    // })
     
-    window.addEventListener("mousemove", (event) => {
-        // console.log(event.pageX, event.pageY) //왼쪽이 0이고 오른쪽으로가면 숫자가 커짐 pageY는 위에가 0이고 아래로 가면 커짐
+    let x = 0;
+    let y = 0;
+    let targetX = 0;
+    let targetY = 0;
+    let speed = 0.03; //얘를 변경해서 속도 변경 가능
+
+    window.addEventListener("click", (event) => {
+        x = event.pageX;
+        y = event.pageY;
+
         h1.innerText = `x: ${event.pageX}, y: ${event.pageY}`;
+        box.style.top = y + "px";
+        box.style.left = x + "px";
     })
+
+    // const loop = () => {
+    //     // console.log(1);
+
+    //     targetX += (x - targetX) * speed;//가야할 거리 x에서 현재거리인 targetX를 빼서 속도를 곱해줬음
+    //     targetY += (y - targetY) * speed;
+    //     //저렇게하면 콘솔에 targetX,Y값이 소수점 8,9자리까지 나오는데 toFixed(2)하면 두자리까지나옴
+    //     box.style.top = targetY + "px";
+    //     box.style.left = targetX + "px";
+    //     window.requestAnimationFrame(loop);
+    // }
+    // loop();//loop가 실행되면서 requestAnimationFrame가 계속 loop함수를 실행해준다.
+
 </script>
 </html>
