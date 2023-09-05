@@ -100,7 +100,7 @@
           //두번째 방법
           for(var i=0; i<totalNum; i++){
             //console.log(i)
-            if(scroll > section[i].offsetTop - window.outerHeight/3  && scroll < section[i].offsetTop - window.outerHeight/3 + section[i].offsetHeight){
+            if(scroll > section[i].offsetTop - window.innerHeight/3  && scroll < section[i].offsetTop - window.innerHeight/3 + section[i].offsetHeight){
               pageNum = i;
               //console.log(section[i].offsetHeight)
               break;
