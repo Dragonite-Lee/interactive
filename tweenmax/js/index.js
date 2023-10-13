@@ -105,13 +105,14 @@ window.onload = function(){
             //여러분이 해보세요
             _cards.forEach(function(item, i){
                 TweenMax.to(item, 1, {
-                    top : 0,
-                    left : 0 ,
-                    rotationX : 0,
-                    rotationY : 0,
-                    rotationZ : 0,
+                    top : Math.random() * (windowHeight - 300) + 100,
+                    left : Math.random() * (windowWidth - 300) + 100, 
+                    rotationX : "random(-30,60)", //Math.random()*30 
+                    rotationY : "random(-20,20)", 
+                    rotationZ : "random(-60,60)",
+                    scale: 1,
                     ease : Power4.easeInOut, 
-                    delay : i * .15
+                    delay : i * .2
                 })
             })
         }

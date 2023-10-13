@@ -59,17 +59,17 @@ window.onload = function(){
         body.style.background = bgColorArr[pageNum];
 
         for(var i=0; i<_buttonAll.length; i++){
-             //전체 버튼 비활성
-             if(pageNum == i){
+                //전체 버튼 비활성
+                if(pageNum == i){
                 //버튼 활성
                 _buttonAll[pageNum].classList.add("active");
-             }else{
-                 _buttonAll[i].classList.remove("active");
-             }
+                }else{
+                    _buttonAll[i].classList.remove("active");
+                }
         }
 
 
-        //중복된 트윈 킬
+        //중복된 트윈 킬 아에 없애고 다시 시작한다고 생각
         TweenMax.killTweensOf(_textItem);
         
         if(pageNum == 0){
